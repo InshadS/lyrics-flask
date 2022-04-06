@@ -1,0 +1,90 @@
+/* 
+
+body {
+  margin: 0;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.461);
+  border-radius: 5px;
+}
+
+.list-box {
+  border: 1px solid rgb(138, 138, 138);
+  border-radius: 3px;
+  min-width: 30rem;
+  margin-bottom: 2px;
+  padding-left: 5px;
+}
+.list-box:hover {
+  background-color: #467fb9;
+}
+ul {
+  justify-content: center;
+  display: grid;
+}
+.btn-div {
+  display: flex;
+  justify-content: center;
+}
+.action-btn {
+  border: none;
+  background: #467fb9;
+  margin: 10px;
+  color: #ffffff;
+  cursor: pointer;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+
+* {
+  background: #e6eaee;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: #e6eaee;
+}
+
+.nav-bar {
+  background: #e6eaee;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.heading {
+  display: contents;
+  text-align: center;
+}
+.song {
+  color: rgb(45, 45, 45);
+  background: transparent;
+}
+.lyrics {
+  color: #467fb9;
+  background: transparent;
+}
+.com {
+  color: rgb(45, 45, 45);
+  background: transparent;
+  padding-top: 17px;
+}
+
+a:hover {
+  color: #467fb9;
+}
+a,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+div.col-3 {
+  border-right: 1px solid black;
+}
+
+li.current {
+  color: #467fb9;
+}
