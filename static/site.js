@@ -18,11 +18,20 @@ function main() {
       success: (data) => {
         list = '';
         data.forEach((element) => {
-          list +=
-            `<li class="song" value=${element.id}>` + element.name + '</li>';
+          list += `<li class="song" id=${element.id}>` + element.name + '</li>';
         });
         tag = `<ul>${list}</ul>`;
         $('div.songs').html(tag);
+        console.log(data);
+      },
+    });
+  });
+  $(document).on('click', 'li.song', function () {
+    $.get({
+      url: `http://127.0.0.1:5000/songs/${this.value}/lyrics/${this.id}`,
+      success: (data) => {
+        lyric = `<pre><p>${data}</p></pre>`;
+        $('div.lyric').html(lyric);
         console.log(data);
       },
     });

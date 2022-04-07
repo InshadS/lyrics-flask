@@ -27,7 +27,7 @@ def lyric(sid,aid):
     artists = lyrics.get_all_artist()
     songs= lyrics.get_all_songs(aid)
     singer= lyrics.singer(aid)
-    return render_template("lyrics.html",lyrics=lyric,artists=artists,songs=songs,singer=singer,currentsong=sid,currentartist=aid)
+    return jsonify(lyric)
 
 if __name__=="__main__":
     app.run(debug=True)
