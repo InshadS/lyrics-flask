@@ -5,9 +5,11 @@ function main() {
       list = '';
       data.forEach((element) => {
         list +=
-          `<li class="items" value=${element.id}>` + element.name + '</li>';
+          `<li class="items active" value=${element.id}>` +
+          element.name +
+          '</li>';
       });
-      tag = `<ul>${list}</ul>`;
+      tag = `<ul type='square'>${list}</ul>`;
       $('div.artist').html(tag);
       console.log(data);
     },
@@ -18,9 +20,12 @@ function main() {
       success: (data) => {
         list = '';
         data.forEach((element) => {
-          list += `<li class="song" id=${element.id}>` + element.name + '</li>';
+          list +=
+            `<li class="song active" id=${element.id}>` +
+            element.name +
+            '</li>';
         });
-        tag = `<ul>${list}</ul>`;
+        tag = `<ul type='square'>${list}</ul>`;
         $('div.songs').html(tag);
         console.log(data);
       },
@@ -36,5 +41,14 @@ function main() {
       },
     });
   });
+  $(document).on('click', 'li.items', function () {
+    $('li.items.active').removeClass('active');
+    $(this).addClass('active');
+  });
+  $(document).on('click', 'li.song', function () {
+    $('li.song.active').removeClass('active');
+    $(this).addClass('active');
+  });
 }
+
 $(main);

@@ -57,11 +57,11 @@ body {
   display: contents;
   text-align: center;
 }
-.song {
+.song-head {
   color: rgb(45, 45, 45);
   background: transparent;
 }
-.lyrics {
+.lyrics-head {
   color: #467fb9;
   background: transparent;
 }
@@ -71,14 +71,12 @@ body {
   padding-top: 17px;
 }
 
-a:hover {
+.items:hover {
   color: #467fb9;
 }
-a,
-a:active,
-a:focus {
-  text-decoration: none;
-  color: inherit;
+
+.song:hover {
+  color: #467fb9;
 }
 
 div.col-3 {
@@ -86,5 +84,9 @@ div.col-3 {
 }
 
 li.current {
+  color: #467fb9;
+}
+
+.active {
   color: #467fb9;
 }
