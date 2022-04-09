@@ -83,10 +83,6 @@ div.col-3 {
   border-right: 1px solid black;
 }
 
-li.current {
-  color: #467fb9;
-}
-
 .active {
   color: #467fb9;
 }
