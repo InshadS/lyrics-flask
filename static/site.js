@@ -1,13 +1,11 @@
 function main() {
   $.get({
-    url: 'http://127.0.0.1:5000/artists',
+    url: 'http://127.0.0.1:5000/api/artists',
     success: (data) => {
       list = '';
       data.forEach((element) => {
         list +=
-          `<li class="items active" value=${element.id}>` +
-          element.name +
-          '</li>';
+          `<li class="items" value=${element.id}>` + element.name + '</li>';
       });
       tag = `<ul type='square'>${list}</ul>`;
       $('div.artist').html(tag);
@@ -16,14 +14,11 @@ function main() {
   });
   $(document).on('click', 'li.items', function () {
     $.get({
-      url: `http://127.0.0.1:5000/songs/${this.value}`,
+      url: `http://127.0.0.1:5000/api/songs/${this.value}`,
       success: (data) => {
         list = '';
         data.forEach((element) => {
-          list +=
-            `<li class="song active" id=${element.id}>` +
-            element.name +
-            '</li>';
+          list += `<li class="song" id=${element.id}>` + element.name + '</li>';
         });
         tag = `<ul type='square'>${list}</ul>`;
         $('div.songs').html(tag);
@@ -33,7 +28,7 @@ function main() {
   });
   $(document).on('click', 'li.song', function () {
     $.get({
-      url: `http://127.0.0.1:5000/songs/${this.value}/lyrics/${this.id}`,
+      url: `http://127.0.0.1:5000/api/songs/${this.value}/lyrics/${this.id}`,
       success: (data) => {
         lyric = `<pre><p>${data}</p></pre>`;
         $('div.lyric').html(lyric);
